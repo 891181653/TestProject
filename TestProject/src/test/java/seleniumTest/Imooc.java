@@ -47,7 +47,7 @@ public class Imooc {
 		driver.findElement(By.name("email")).sendKeys("13437868119");
 		driver.findElement(By.name("password")).sendKeys("zxcfghuiop321");
 
-		// test��֤��
+		// test验证码
 
 		try {
 
@@ -72,19 +72,19 @@ public class Imooc {
 
 				// Copy the element screenshot to disk
 				File screenshotLocation = new File("C:\\images\\GoogleLogo_screenshot.png");
-				// FileUtils.copyFile(screenshot, screenshotLocation);
+			//	FileUtils.copyFile(screenshot, screenshotLocation);
 
 				// -
 
 				DamaUtil util = new DamaUtil();
 				System.out.println("===================");
-				String code = ""; // ��֤��
+				String code = ""; // 验证码
 				Captcha captcha = new Captcha();
 				captcha.setFilePath("test.png");
 				code = DamaUtil.getCaptchaResult(captcha);
-				System.out.println("���봦���������֤����" + code);
+				System.out.println("打码处理出来的验证码是" + code);
 				WebElement elementsumbit = driver.findElement(By.id("seccodeInput"));
-				// ����ؼ���
+				// 输入关键字
 				elementsumbit.sendKeys(code);
 				try {
 					Thread.sleep(1000);
@@ -94,21 +94,21 @@ public class Imooc {
 				}
 			} else {
 
-				System.out.println("����Ҫ��֤��");
+				System.out.println("不需要验证码");
 			}
 
 		} catch (Exception e) {
-			System.out.println("��֤���������");
+			System.out.println("验证码输入错误");
 
 		}
 
-		// end ��֤��
+		// end 验证码
 
 		driver.findElement(By.className("xa-login")).click();
 
 	}
 
-//�༭������Ϣ
+//编辑个人信息
 	public void editImformation() throws InterruptedException {
 		Thread.sleep(3000);
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id=\"header-avator\"]/img")));
@@ -119,31 +119,31 @@ public class Imooc {
 		driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[1]/div[2]/ul/li[2]/a")).click();
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("js-edit-info")));
 		driver.findElement(By.className("js-edit-info")).click();
-		// edit����༭div
+		// edit进入编辑div
 
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("job")));
 		WebElement form1 = driver.findElement(By.id("profile"));
 		WebElement job = form1.findElement(By.id("job"));
 		// WebElement job=driver.findElement(By.id("job"));
 
-		// ѡ��ְҵ
+		// 选择职业
 		job.click();
 		Thread.sleep(3000);
 		Select jobs = new Select(job);
 		jobs.selectByValue("9");
 		job.click();
-		// ��д�ǳ�
+		// 填写昵称
 		WebElement nName = form1.findElement(By.id("nick"));
 		nName.click();
 		nName.clear();
 		nName.sendKeys("kkkkkkkkkkkkkkkkk");
-		// ѡ��ʡ��
+		// 选择省份
 		WebElement province = form1.findElement(By.id("province-select"));
 		province.click();
 		Select pro = new Select(province);
 		pro.selectByValue("19");
 		province.click();
-		// ѡ�����
+		// 选择城市
 		Thread.sleep(2000);
 		WebElement city = form1.findElement(By.id("city-select"));
 		city.click();
@@ -151,21 +151,21 @@ public class Imooc {
 		Select ci = new Select(city);
 		ci.selectByValue("204");
 		city.click();
-		// ѡ����
+		// 选择区
 		Thread.sleep(2000);
 		WebElement area = form1.findElement(By.id("area-select"));
 		area.click();
 		Select areas = new Select(area);
 		areas.selectByValue("1765");
 		area.click();
-		// ѡ���Ա�
+		// 选择性别
 		List<WebElement> sex = form1.findElements(By.name("sex"));
 		sex.get(1).click();
-		// ��д���ڸ��˱�ע
+		// 填写关于个人备注
 		form1.findElement(By.id("aboutme")).sendKeys("ttttttt");
 		form1.findElement(By.id("profile-submit")).click();
 
-		// �ж���û����erroά��div
+		// 判断有没出现erro维修div
 		Thread.sleep(2000);
 		HaveOrNo aHaveOrNo = new HaveOrNo();
 		By seletor = new By.ByClassName("js-modal-info");
@@ -177,37 +177,37 @@ public class Imooc {
 		} else {
 			System.out.println("error");
 		}
-		// ���ȡ�����ر�div
+		// 点击取消，关闭div
 		driver.findElement(By.xpath("//*[@id=\"profile\"]/div[6]/div/a[2]")).click();
 
 	}
 
-//�ϴ�ͷ��
+//上传头像
 	public void uploadPicture() throws InterruptedException {
 		Actions actions = new Actions(driver);
 		WebElement target = driver.findElement(By.className("avator-img"));
 		actions.moveToElement(target);
 		Thread.sleep(1000);
 		driver.findElement(By.className("update-avator")).click();
-		// driver.findElement(By.linkText("�ϴ�ͷ��")).click();
+		// driver.findElement(By.linkText("上传头像")).click();
 		driver.findElement(By.id("upload")).sendKeys("C:\\images\\picture2.png");
-		// driver.findElement(By.linkText("ȷ��")).click();ϵͳά�����޸Ĳ���
+		// driver.findElement(By.linkText("确定")).click();系统维修中修改不了
 		Thread.sleep(3000);
 		driver.close();
 	}
 
 	public void editPosition() throws InterruptedException {
-		String newPosition = "�������";
+		String newPosition = "方子燕姑";
 		Thread.sleep(3000);
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id=\"header-avator\"]/img")));
 		driver.findElement(By.xpath("//*[@id=\"header-avator\"]/img")).click();
 		driver.findElement(By.className("set-btn")).click();
-		driver.findElement(By.linkText("�ռ���ַ")).click();
+		driver.findElement(By.linkText("收件地址")).click();
 		Thread.sleep(3000);
 		By sele = new By.ByXPath("//*[@id=\"main\"]/div/div[2]/div/div/div[3]/div/ul/li[1]/div/p[1]");
 
 		if (!(checkElement.check(driver, sele))) {
-			System.out.println("��ַ�����������������");
+			System.out.println("地址已满，不允许添加了");
 		} else {
 
 			driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div[3]/div/ul/li[1]/div/p[1]")).click();
@@ -223,7 +223,7 @@ public class Imooc {
 			prov.click();
 			Thread.sleep(1000);
 			Select pro1 = new Select(prov);
-			pro1.selectByVisibleText("�㶫");
+			pro1.selectByVisibleText("广东");
 			prov.click();
 
 			Thread.sleep(1000);
@@ -231,7 +231,7 @@ public class Imooc {
 			city.click();
 			Thread.sleep(1000);
 			Select city1 = new Select(city);
-			city1.selectByVisibleText("տ����");
+			city1.selectByVisibleText("湛江市");
 			city.click();
 
 			Thread.sleep(1000);
@@ -239,16 +239,16 @@ public class Imooc {
 			area.click();
 			Thread.sleep(1000);
 			Select area1 = new Select(area);
-			area1.selectByVisibleText("������");
+			area1.selectByVisibleText("雷州市");
 			area.click();
 
 			driver.findElement(By.id("addrdetail"))
-					.sendKeys("����������d80a294506b4c9d18015e755cee48f953ddc3f2f-refs/branch-heads/380f��Ҫ20����");
+					.sendKeys("哈哈村那里d80a294506b4c9d18015e755cee48f953ddc3f2f-refs/branch-heads/380f非要20个字");
 			driver.findElement(By.id("zipcode")).sendKeys("510000");
 
 			driver.findElement(By.id("submit")).click();
 			Thread.sleep(4000);
-			// ��֤�Ƿ��ύ�ɹ�
+			// 验证是否提交成功
 			contentBox = driver.findElement(By.className("contentBox"));
 			listul = contentBox.findElement(By.className("list-box"));
 			By sele1 = new By.ByXPath("//*[@id=\"main\"]/div/div[2]/div/div/div[3]/div/ul/li[1]/div/p[1]");
@@ -256,25 +256,27 @@ public class Imooc {
 			System.out.println();
 			WebElement newOne;
 			if (checkElement.check(driver, sele1)) {
-				System.out.println(target.size() + "--------------------");
+				System.out.println(target.size()+"--------------------");
 				newOne = target.get(1);
 
 			} else {
-				System.out.println(target.size() + "--------------------");
+				System.out.println(target.size()+"--------------------");
 				newOne = target.get(0);
 			}
 
 			WebElement nameIn = newOne.findElement(By.className("name"));
 			if (nameIn.getText().equals(allName)) {
-				System.out.println("¼��ɹ�");
-				// �޸�Ĭ��
+				System.out.println("录入成功");
+				// 修改默认
 				Actions actions = new Actions(driver);
 				actions.moveToElement(newOne).perform();
 				Thread.sleep(2000);
-
-				if (target.size() == 2) {
-					System.out.println("����Ҫ�޸�Ĭ�ϵĵ�ַ");
-				} else {
+				
+				if(target.size()==2) {
+					System.out.println("不需要修改默认的地址");
+				}
+				else
+				{
 					newOne.findElement(By.className("js-normal-btn")).click();
 					Thread.sleep(2000);
 
@@ -286,10 +288,10 @@ public class Imooc {
 						System.out.println("ERROR");
 					}
 				}
-
-				// end�޸�Ĭ��
+			
+				// end修改默认
 			} else {
-				System.out.println("¼��ʧ��");
+				System.out.println("录入失败");
 			}
 		}
 

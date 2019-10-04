@@ -12,35 +12,35 @@ public class job {
 		
 		
 
-		// ÆÕÍ¨Login-51job.com----------------------------------------------------------------
+		// æ™®é€šLogin-51job.com----------------------------------------------------------------
 		driver.get("https://login.51job.com/login.php?lang=c");
 		System.out.println(driver.getTitle());
-//		driver.findElement(By.linkText("Ê×Ò³")).click();
-		driver.findElement(By.partialLinkText("Ê×Ò³")).click();
-		// ÉèÖÃä¯ÀÀÆ÷ ´óĞ¡---------------------
+//		driver.findElement(By.linkText("é¦–é¡µ")).click();
+		driver.findElement(By.partialLinkText("é¦–é¡µ")).click();
+		// è®¾ç½®æµè§ˆå™¨ å¤§å°---------------------
 		/*
-		 * maximize() ÉèÖÃä¯ÀÀÆ÷×î´ó»¯ setSize() ÉèÖÃä¯ÀÀÆ÷¿í¸ß
+		 * maximize() è®¾ç½®æµè§ˆå™¨æœ€å¤§åŒ– setSize() è®¾ç½®æµè§ˆå™¨å®½é«˜
 		 */
-		driver.manage().window().maximize();// ÉèÖÃä¯ÀÀÆ÷×î´ó»¯
+		driver.manage().window().maximize();// è®¾ç½®æµè§ˆå™¨æœ€å¤§åŒ–
 	//	driver.manage().window().
-		// driver.manage().window().setSize(new Dimension(480, 800));ÉèÖÃä¯ÀÀÆ÷´óĞ¡
-		// driver.findElement(By.linkText("µÇÂ¼")).click();
+		// driver.manage().window().setSize(new Dimension(480, 800));è®¾ç½®æµè§ˆå™¨å¤§å°
+		// driver.findElement(By.linkText("ç™»å½•")).click();
 
-		// ä¯ÀÀÆ÷·µ»Ø£¬ÏòÇ°£¬Ë¢ĞÂ--------------
+		// æµè§ˆå™¨è¿”å›ï¼Œå‘å‰ï¼Œåˆ·æ–°--------------
 		
 		driver.navigate().back();
 		driver.navigate().forward();
 		driver.navigate().back();
 		driver.navigate().refresh();
-		// Login ¹¦ÄÜ ¶àÖÖ¶¨Î»·½Ê½------------
-		// driver.findElement(By.linkText("µÇÂ¼")).click();Á¬½ÓÎÄ±¾·½Ê½
-		// driver.findElement(By.partialLinkText("Ê×Ò³")).click(); Ä£ºıÁ¬½ÓÎÄ±¾·½Ê½
-		// driver.findElement(By.id("loginname")).click();id·½Ê½
-		// driver.findElement(By.className("ef")).click();class·½Ê½
-		// driver.findElement(By.name("loginname")).click();name·½Ê½
+		// Login åŠŸèƒ½ å¤šç§å®šä½æ–¹å¼------------
+		// driver.findElement(By.linkText("ç™»å½•")).click();è¿æ¥æ–‡æœ¬æ–¹å¼
+		// driver.findElement(By.partialLinkText("é¦–é¡µ")).click(); æ¨¡ç³Šè¿æ¥æ–‡æœ¬æ–¹å¼
+		// driver.findElement(By.id("loginname")).click();idæ–¹å¼
+		// driver.findElement(By.className("ef")).click();classæ–¹å¼
+		// driver.findElement(By.name("loginname")).click();nameæ–¹å¼
 		// driver.findElement(By.tagName("input")).sendKeys("13437868119");tag
 		// driver.findElement(By.xpath("//*[@id=\"loginname\"]")).sendKeys("13437868119");Xpath
-		// ¶¨Î»
+		// å®šä½
 		driver.findElement(By.cssSelector("#loginname")).sendKeys("13437868119");
 		// driver.findElement(By.id("loginname")).sendKeys("13437868119");
 		driver.findElement(By.id("password")).sendKeys("zxcvbnm123");
@@ -48,16 +48,16 @@ public class job {
 		String txtString = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div[3]/ul/li[1]/a")).getText()
 				.toString();
 		System.out.println("-----------------" + txtString);
-		if (txtString.equals("»¶Ó­Äú")) {
-			System.out.println("»¶Ó­µÇÂ½£¬µÇÂ¼³É¹¦£¡");
+		if (txtString.equals("æ¬¢è¿æ‚¨")) {
+			System.out.println("æ¬¢è¿ç™»é™†ï¼Œç™»å½•æˆåŠŸï¼");
 		} else {
-			System.out.println("¶Ô²»Æğ£¬µÇÂ¼Ê§°Ü");
+			System.out.println("å¯¹ä¸èµ·ï¼Œç™»å½•å¤±è´¥");
 		}
-		// ÆÕÍ¨Login
+		// æ™®é€šLogin
 
-		// ÆÕÍ¨Login-51job.com----------------------------------------------------------------
+		// æ™®é€šLogin-51job.com----------------------------------------------------------------
 
-		// ´ò¿ªÒş²ØµÄdiv Ö±½ÓÓÃJavascriptExecutorÖ´ĞĞ¾ÍºÃ
+		// æ‰“å¼€éšè—çš„div ç›´æ¥ç”¨JavascriptExecutoræ‰§è¡Œå°±å¥½
 		/*
 		 * Actions action=new Actions(driver); WebElement
 		 * welcome=driver.findElement(By.xpath(
@@ -69,38 +69,38 @@ public class job {
 		js.executeScript("arguments[0].click();", changePage);
 		String nString = driver.findElement(By.xpath("/html/body/div[2]/div[1]/a[2]")).getAttribute("class");
 		if (nString.equals("on")) {
-			System.out.println("³É¹¦´ÓÒş²Ø½çÃæµã»÷Á¬½ÓÌø×ª");
+			System.out.println("æˆåŠŸä»éšè—ç•Œé¢ç‚¹å‡»è¿æ¥è·³è½¬");
 		} else {
-			System.out.println("Òş²Ø½çÃæÌø×ªÊ§°Ü");
+			System.out.println("éšè—ç•Œé¢è·³è½¬å¤±è´¥");
 		}
 		WebElement LoginOut = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div[3]/ul/li[6]/a"));
 		js.executeScript("arguments[0].click();", LoginOut);
 
-		// ´ò¿ªÒş²ØµÄdiv Ö±½ÓÓÃJavascriptExecutorÖ´ĞĞ¾ÍºÃ
+		// æ‰“å¼€éšè—çš„div ç›´æ¥ç”¨JavascriptExecutoræ‰§è¡Œå°±å¥½
 
-		// Òş²ØdivÊ½µÇÂ¼
+		// éšè—divå¼ç™»å½•
 		driver.get("https://www.51job.com/");
 		driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div[1]/div[3]/span[1]")).click();
 		WebElement lowdown = driver.findElement(By.xpath("//*[@id=\"login_form\"]/p[2]/span"));
 
 		js.executeScript("arguments[0].click();", lowdown);
-		// ÏÔÊ¾Ãæ°å£¬²»ÏÔÊ¾µÄ»°»á±¨ element not interactable ²»ÄÜ½»»¥µÄ´íÎó
+		// æ˜¾ç¤ºé¢æ¿ï¼Œä¸æ˜¾ç¤ºçš„è¯ä¼šæŠ¥ element not interactable ä¸èƒ½äº¤äº’çš„é”™è¯¯
 		driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div[1]/div[3]/span[1]")).click();
 
 		try {
 			Thread.sleep(50);
 		} catch (InterruptedException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
-		// ¶ÔÓÚinputµÄÊôĞÔ¸Ä±äºóÔÙ½øĞĞ²Ù×÷
+		// å¯¹äºinputçš„å±æ€§æ”¹å˜åå†è¿›è¡Œæ“ä½œ
 		String inputName = "document.getElementById('loginname').setAttribute('value', 'text')";
 		js.executeScript(inputName);
 		// driver.findElement(By.id("loginname")).sendKeys("13437868119");
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
 		String inputpassword = "document.getElementById('password').setAttribute('type', 'text')";
@@ -109,10 +109,10 @@ public class job {
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
-		// µ¥¸ö¸´Ñ¡¿ò²Ù×÷
+		// å•ä¸ªå¤é€‰æ¡†æ“ä½œ
 		driver.findElement(By.id("isread")).click();
 		/*
 		 * String checkoutoLogin = "document.getElementById('isread').click()";
@@ -121,12 +121,12 @@ public class job {
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
-		// button»òÁ¬½ÓµÄ²Ù×÷
+		// buttonæˆ–è¿æ¥çš„æ“ä½œ
 		driver.findElement(By.id("login_btn")).click();
-		// js²Ù×÷¸´Ñ¡¿ò
+		// jsæ“ä½œå¤é€‰æ¡†
 		/*
 		 * WebElement webbutton=driver.findElement(By.id("login_btn"));
 		 * js.executeScript("arguments[0].click();", webbutton);

@@ -23,11 +23,11 @@ public class Project {
 		 * String firefoxdriver = "c:\\webdriver\\geckodriver.exe";
 		 * System.setProperty("webdriver.gecko.driver",firefoxdriver); WebDriver driver
 		 * = new FirefoxDriver(); driver.get("https://www.baidu.com");
-		 * driver.findElement(By.id("")).sendKeys(""); // »ñÈ¡ ÍøÒ³µÄ title
+		 * driver.findElement(By.id("")).sendKeys(""); // è·å– ç½‘é¡µçš„ title
 		 * System.out.println("The testing page title is: " + driver.getTitle();
 		 */
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
-		// ÉèÖÃ chrome µÄÂ·¾¶
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
+		// è®¾ç½® chrome çš„è·¯å¾„
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();

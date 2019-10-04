@@ -18,15 +18,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 
-
 public class Baidu {
-	
+
 	public void login(WebDriver driver) throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		driver.get("https://www.baidu.com/"); // »ñÈ¡ ÍøÒ³µÄ title
+		driver.get("https://www.baidu.com/"); // è·å– ç½‘é¡µçš„ title
 		System.out.println(driver.getTitle());
-		driver.findElement(By.linkText("µÇÂ¼")).click(); // ÇĞ»»´°¿Ú
-		// ÉèÖÃµÈ´ıÊ±¼ä£¬ÖªµÀÕÒµ½Ä³¸öÊÂ¼şºó²Å¿ªÊ¼ÍùÏÂÖ´ĞĞ
+		driver.findElement(By.linkText("ç™»å½•")).click(); // åˆ‡æ¢çª—å£
+		// è®¾ç½®ç­‰å¾…æ—¶é—´ï¼ŒçŸ¥é“æ‰¾åˆ°æŸä¸ªäº‹ä»¶åæ‰å¼€å§‹å¾€ä¸‹æ‰§è¡Œ
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions
 				.presenceOfAllElementsLocatedBy(By.xpath("//*[@id=\"TANGRAM__PSP_10__footerULoginBtn\"]")));
@@ -44,7 +43,7 @@ public class Baidu {
 	public void register(WebDriver driver) throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		//ÇĞ»»´°¿Ú
+		//åˆ‡æ¢çª—å£
 		Set<String> nwindow=driver.getWindowHandles();
 	    Iterator aIterator=nwindow.iterator();
 	    while(aIterator.hasNext()) {
@@ -52,13 +51,13 @@ public class Baidu {
 	    	System.out.println(window1);
 	    	driver.switchTo().window(window1);
 	    }
-		//ÇĞ»»´°¿Ú
+		//åˆ‡æ¢çª—å£
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id=\"TANGRAM__PSP_4__phone\"]")));
 		driver.findElement(By.name("phone")).sendKeys("13437868119");
 	    driver.findElement(By.xpath("//*[@id=\"TANGRAM__PSP_4__phoneLabel\"]")).click();
-	    //´¦Àíµ¯³ö¿òalert
+	    //å¤„ç†å¼¹å‡ºæ¡†alert
 	  
-	   /* System.out.println("»ñÈ¡¾¯¸æ¿òÎÄ±¾Öµ£º"+driver.switchTo().alert().getText());
+	   /* System.out.println("è·å–è­¦å‘Šæ¡†æ–‡æœ¬å€¼ï¼š"+driver.switchTo().alert().getText());
 */		
 	    Thread.sleep(3000);
 	    wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("TANGRAM__PSP_23__confirm_cancel")));
