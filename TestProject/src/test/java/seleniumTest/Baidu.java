@@ -15,11 +15,12 @@ import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 
 
 public class Baidu {
-
+    
 	public void login(WebDriver driver) throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		driver.get("https://www.baidu.com/"); // 获取 网页的 title

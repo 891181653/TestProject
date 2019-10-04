@@ -2,6 +2,7 @@ package seleniumTest;
 
 import java.io.IOException;
 
+
 import java.sql.Time;
 
 import javax.print.DocFlavor.STRING;
@@ -15,10 +16,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
 
 public class Project {
-
-	public static void main(String[] args) throws InterruptedException, IOException {
+  
+	public static  void main(String[] args) throws InterruptedException, IOException {
 		/*
 		 * String firefoxdriver = "c:\\webdriver\\geckodriver.exe";
 		 * System.setProperty("webdriver.gecko.driver",firefoxdriver); WebDriver driver
