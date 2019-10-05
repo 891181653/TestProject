@@ -7,8 +7,8 @@
         <methods>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
+          <include name="loginAndEdiPosition"/>
           <include name="afterClass"/>
-          <include name="login"/>
           <include name="afterTest"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>

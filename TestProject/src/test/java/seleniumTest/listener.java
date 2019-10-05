@@ -2,6 +2,8 @@ package seleniumTest;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
@@ -16,17 +18,23 @@ public class listener extends TestListenerAdapter {
 	
 	  @Override
 	  public void onTestFailure(ITestResult tr) {
-		  TestNgLogin tl= (TestNgLogin)tr;
-		  driver=tl.driver;
+		  TestNgLogin tg= (TestNgLogin)tr.getInstance();
+		  driver=tg.driver;
 		  System.out.println("失败了,要截图");
-		  takeScreenShot();
+		
+		  takeScreenShot(driver);
 	    super.onTestFailure(tr);
 	  }
-	  public void takeScreenShot() {
+	  public void takeScreenShot(WebDriver driver) {
+		  SimpleDateFormat sdf=new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+		  String curTime=sdf.format(new Date());
+		  String curClassName=this.getClass().getName();
+		  String pngPath=curClassName+"_"+curTime+".png";
 		  
+		  String curPath=System.getProperty("user.dir");
 		  File scr=((RemoteWebDriver)driver).getScreenshotAs(OutputType.FILE);
 		  try {
-			Files.copy(scr, new File("C:\\Users\\Candy\\git\\repository\\TestProject\\editPosition.png"));
+			Files.copy(scr, new File(curPath+"\\"+pngPath));
 		} catch (IOException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();

@@ -2,6 +2,10 @@ package seleniumTest;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
 
 import com.google.common.io.Files;
 
@@ -47,8 +51,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.AfterTest;
-
+@Listeners({listener.class})
 public class TestNgLogin {
 	    WebDriver driver;
 		WebDriverWait wait;
@@ -167,8 +172,7 @@ public class TestNgLogin {
 						System.out.println("SUCCESS");
 					} else {
 						System.out.println("ERROR");
-						//修改失败后截图
-						takeScreenShot();
+
 					}
 				}			
 				// end修改默认
@@ -176,9 +180,10 @@ public class TestNgLogin {
 				System.out.println("录入失败");
 			}
 		}
+		Assert.fail("假装失败了");
 
   }
- //截图
+ 
 
   
   @AfterMethod
