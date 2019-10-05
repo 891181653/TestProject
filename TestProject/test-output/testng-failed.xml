@@ -3,11 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="seleniumTest.Project">
+      <class name="seleniumTest.TestNgLogin">
         <methods>
-          <include name="main1"/>
+          <include name="beforeClass"/>
+          <include name="beforeMethod"/>
+          <include name="afterClass"/>
+          <include name="login"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- seleniumTest.Project -->
+      </class> <!-- seleniumTest.TestNgLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

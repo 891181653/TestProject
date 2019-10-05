@@ -2,6 +2,7 @@ package seleniumTest;
 
 import javax.imageio.ImageIO;
 
+
 import java.util.List;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -35,6 +36,7 @@ public class Imooc {
 
 	public void initDriver(WebDriver driver) {
 		this.driver = driver;
+		
 		wait = new WebDriverWait(driver, 3000);
 	}
 

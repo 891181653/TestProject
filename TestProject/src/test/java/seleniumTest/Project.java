@@ -19,7 +19,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class Project {
-  
+
 	public static  void main(String[] args) throws InterruptedException, IOException {
 		/*
 		 * String firefoxdriver = "c:\\webdriver\\geckodriver.exe";
@@ -28,11 +28,11 @@ public class Project {
 		 * driver.findElement(By.id("")).sendKeys(""); // 获取 网页的 title
 		 * System.out.println("The testing page title is: " + driver.getTitle();
 		 */
-		// TODO 自动生成的方法存根
 		// 设置 chrome 的路径
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
+		
 	/*	job job1=new job();
 		job1.login(driver);*/
 	/*	Baidu imweb=new Baidu();
@@ -41,7 +41,7 @@ public class Project {
 		Imooc imooc=new Imooc();
 		imooc.initDriver(driver);
 		imooc.login();
-//		imooc.editImformation();
+	imooc.editImformation();
 //		imooc.uploadPicture();
 		for(int i=1;i<10;i++) {
 		imooc.editPosition();}
