@@ -2,7 +2,7 @@ package seleniumTest;
 
 import javax.imageio.ImageIO;
 
-
+import java.util.Iterator;
 import java.util.List;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -16,14 +16,13 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.sun.jna.platform.FileUtils;
-
 import Help.HaveOrNo;
 import Help.yanzheng.Captcha;
 import Help.yanzheng.DamaUtil;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ByName;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
@@ -36,7 +35,7 @@ public class Imooc {
 
 	public void initDriver(WebDriver driver) {
 		this.driver = driver;
-		
+
 		wait = new WebDriverWait(driver, 3000);
 	}
 
@@ -54,7 +53,7 @@ public class Imooc {
 		try {
 
 			By seletor = new By.ByXPath("//*[@id=\"signup-form\"]/div[3]/input");
-			driver.manage().window().maximize();
+
 			if (checkElement.check(driver, seletor)) {
 				WebElement ele = driver.findElement(By.xpath("//*[@id=\"signup-form\"]/div[3]/a[1]/img"));
 
@@ -74,7 +73,7 @@ public class Imooc {
 
 				// Copy the element screenshot to disk
 				File screenshotLocation = new File("C:\\images\\GoogleLogo_screenshot.png");
-			//	FileUtils.copyFile(screenshot, screenshotLocation);
+				// FileUtils.copyFile(screenshot, screenshotLocation);
 
 				// -
 
@@ -198,6 +197,7 @@ public class Imooc {
 		driver.close();
 	}
 
+//获取课程列表
 	public void editPosition() throws InterruptedException {
 		String newPosition = "方子燕姑";
 		Thread.sleep(3000);
@@ -258,11 +258,11 @@ public class Imooc {
 			System.out.println();
 			WebElement newOne;
 			if (checkElement.check(driver, sele1)) {
-				System.out.println(target.size()+"--------------------");
+				System.out.println(target.size() + "--------------------");
 				newOne = target.get(1);
 
 			} else {
-				System.out.println(target.size()+"--------------------");
+				System.out.println(target.size() + "--------------------");
 				newOne = target.get(0);
 			}
 
@@ -273,12 +273,10 @@ public class Imooc {
 				Actions actions = new Actions(driver);
 				actions.moveToElement(newOne).perform();
 				Thread.sleep(2000);
-				
-				if(target.size()==2) {
+
+				if (target.size() == 2) {
 					System.out.println("不需要修改默认的地址");
-				}
-				else
-				{
+				} else {
 					newOne.findElement(By.className("js-normal-btn")).click();
 					Thread.sleep(2000);
 
@@ -290,7 +288,7 @@ public class Imooc {
 						System.out.println("ERROR");
 					}
 				}
-			
+
 				// end修改默认
 			} else {
 				System.out.println("录入失败");
@@ -299,4 +297,52 @@ public class Imooc {
 
 	}
 
+//课程获取
+	public void courseSelected(String className) throws InterruptedException {
+		driver.get("https://www.imooc.com/course/list");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String script = "return arguments[0].scrollIntoView();";
+		int coursePage = 1;
+		WebElement nextPage = driver.findElement(By.linkText("下一页"));
+		boolean nextOrNo = true;
+		boolean findAnser = false;
+		while (nextOrNo && (!findAnser)) {
+
+			System.out.println("----------------------" + coursePage);
+			// 还有下一页的情况执行
+			List<WebElement> courseCard = driver.findElements(By.className("course-card-name"));
+			Iterator<WebElement> listIt = courseCard.iterator();
+			while (listIt.hasNext()) {
+
+				WebElement elements = listIt.next();
+				System.out.println("+++++++++++++" + elements.getText().toString());
+				String courseName = elements.getText();
+				if (className.equals(courseName)) {
+					js.executeScript(script, elements);
+					elements.click();
+					findAnser = true;
+					System.out.println("已经找到" + className);
+					Thread.sleep(3000);
+				}
+			}
+			HaveOrNo haveElement = new HaveOrNo();
+			By seletor = By.linkText("下一页");
+			// 检查是否可以定位到下一页
+			if (haveElement.check(driver, seletor)) {
+				nextPage = driver.findElement(By.linkText("下一页"));
+				js.executeScript(script, nextPage);
+
+				if (!nextPage.isEnabled()) {
+					// 没有下一页了
+					nextOrNo = false;
+				} else {
+					// 还有下一页
+					coursePage++;
+					nextPage.click();
+
+				}
+			}
+		}
+
+	}
 }

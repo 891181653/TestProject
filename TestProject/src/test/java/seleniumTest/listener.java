@@ -18,10 +18,9 @@ public class listener extends TestListenerAdapter {
 	
 	  @Override
 	  public void onTestFailure(ITestResult tr) {
-		  TestNgLogin tg= (TestNgLogin)tr.getInstance();
-		  driver=tg.driver;
-		  System.out.println("失败了,要截图");
 		
+		  driver= WebDriverA.driver;
+		  System.out.println("失败了,要截图");
 		  takeScreenShot(driver);
 	    super.onTestFailure(tr);
 	  }

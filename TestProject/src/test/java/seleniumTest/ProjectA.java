@@ -3,14 +3,14 @@ package seleniumTest;
 import java.io.IOException;
 
 
+
 import java.sql.Time;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.print.DocFlavor.STRING;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByClassName;
-import org.openqa.selenium.By.ByName;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,7 +18,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class Project {
+public class ProjectA {
 
 	public static  void main(String[] args) throws InterruptedException, IOException {
 		/*
@@ -40,12 +40,23 @@ public class Project {
 		imweb.register(driver);*/
 		Imooc imooc=new Imooc();
 		imooc.initDriver(driver);
-		imooc.login();
-	imooc.editImformation();
-//		imooc.uploadPicture();
+		driver.manage().window().maximize();
+		//
+	/*	imooc.login();
+	 *  
+	 *  //编辑个人信息
+	    imooc.editImformation();
+	    //录入收件地址
 		for(int i=1;i<10;i++) {
-		imooc.editPosition();}
+			imooc.editPosition();}
+			//上传头像
+    	imooc.uploadPicture();
+		imooc.courseSelected("Grid布局基础");
+		imooc.courseSelected("前端开发工具技巧介绍—Sublime篇");
+		imooc.courseSelected("vuex基础入门");*/
 		
-	} 
+			
+		}
+	
 
 }

@@ -37,6 +37,10 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
@@ -53,37 +57,42 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.AfterTest;
-@Listeners({listener.class})
-public class TestNgLogin {
-	    WebDriver driver;
-		WebDriverWait wait;
-		HaveOrNo checkElement = new HaveOrNo();
-		
-		 @BeforeMethod
-		  public void beforeMethod() {
-			
-			  System.out.println("this is beforeMethod");
-		  }
-  @BeforeClass
- public void beforeClass() {
-			
-			  System.setProperty("webdriver.chrome.driver",
-						"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");
-				 driver = new ChromeDriver();
-				driver.get("https://www.imooc.com");
-				driver.manage().window().maximize();
-			  System.out.println("this is beforeClass");
-				wait = new WebDriverWait(driver, 3000);
-		  }
 
-  @Test
-  public void loginAndEdiPosition() throws InterruptedException {
+@Listeners({ listener.class })
+public class TestNgLogin  {
+	private static Logger logger = Logger.getLogger(TestNgLogin.class);
+
+	WebDriver driver;
+	WebDriverWait wait;
+	HaveOrNo checkElement = new HaveOrNo();
+
+	@BeforeMethod
+	public void beforeMethod() {
+
+		System.out.println("this is beforeMethod");
+	}
+
+	@BeforeClass
+	public void beforeClass() {
+		PropertyConfigurator.configure("log4j.properties");
+		WebDriverA.setWebDriver();
+		driver=WebDriverA.driver;
+		driver.get("https://www.imooc.com");
+		driver.manage().window().maximize();
+		System.out.println("this is beforeClass");
+		wait = new WebDriverWait(driver, 3000);
+	}
+
+	@Test
+	public void loginAndEdiPosition() throws InterruptedException {
+		logger.debug("开始修改地址");
+		logger.error("-修改失败");
 		driver.findElement(By.linkText("登录")).click();
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("js-loginWrap")));
 		driver.findElement(By.name("email")).sendKeys("13437868119");
 		driver.findElement(By.name("password")).sendKeys("zxcfghuiop321");
 		driver.findElement(By.className("xa-login")).click();
-	  String newPosition = "方子燕姑";
+		String newPosition = "方子燕姑";
 		Thread.sleep(3000);
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id=\"header-avator\"]/img")));
 		driver.findElement(By.xpath("//*[@id=\"header-avator\"]/img")).click();
@@ -142,11 +151,11 @@ public class TestNgLogin {
 			System.out.println();
 			WebElement newOne;
 			if (checkElement.check(driver, sele1)) {
-				System.out.println(target.size()+"--------------------");
+				System.out.println(target.size() + "--------------------");
 				newOne = target.get(1);
 
 			} else {
-				System.out.println(target.size()+"--------------------");
+				System.out.println(target.size() + "--------------------");
 				newOne = target.get(0);
 			}
 
@@ -157,12 +166,10 @@ public class TestNgLogin {
 				Actions actions = new Actions(driver);
 				actions.moveToElement(newOne).perform();
 				Thread.sleep(2000);
-				
-				if(target.size()==2) {
+
+				if (target.size() == 2) {
 					System.out.println("不需要修改默认的地址");
-				}
-				else
-				{
+				} else {
 					newOne.findElement(By.className("js-normal-btn")).click();
 					Thread.sleep(2000);
 
@@ -172,42 +179,66 @@ public class TestNgLogin {
 						System.out.println("SUCCESS");
 					} else {
 						System.out.println("ERROR");
+						
 
 					}
-				}			
+				}
 				// end修改默认
 			} else {
 				System.out.println("录入失败");
 			}
 		}
 		Assert.fail("假装失败了");
+		
 
-  }
- 
+	}
 
-  
-  @AfterMethod
-  public void afterMethod() {
-	  System.out.println("this is afterMethod");
-  }
-
-
-
-  @AfterClass
-  public void afterClass() {
-	  System.out.println("this is afterClass");
-  }
-
-  @BeforeTest
-  public void beforeTest() {
-	  System.out.println("this is beforeTest");
+public void sendEmail() {
+	SimpleEmail email=new SimpleEmail();
 	
-  }
+	//制定用哪个邮箱
+	email.setHostName("smtp.163.com");
+	//制定账号和客户端授权密码
+	email.setAuthentication("a891181653@163.com", "zaqxsw123");
+	try {
+		//设置发送邮箱
+		email.setFrom("a891181653@163.com");
+		//添加要放送的邮箱
+		email.addTo("891181653@qq.com");
+		//添加标题
+		email.setSubject("selenium immooc editPosition");
+		//添加内容
+		email.setMsg("testcase :TestNgLogin is finish");
+		//发送邮件
+		email.send();
+		logger.debug("邮件已发送");
+	} catch (EmailException e) {
+		// TODO 自动生成的 catch 块
+		e.printStackTrace();
+	}
+	
+}
+	@AfterMethod
+	public void afterMethod() {
+		System.out.println("this is afterMethod");
+	}
 
-  @AfterTest
-  public void afterTest() {
-	  System.out.println("this is afterTest");
-	 // driver.close();
-  }
+	@AfterClass
+	public void afterClass() {
+		System.out.println("this is afterClass");
+		sendEmail();
+	}
+
+	@BeforeTest
+	public void beforeTest() {
+		System.out.println("this is beforeTest");
+
+	}
+
+	@AfterTest
+	public void afterTest() {
+		System.out.println("this is afterTest");
+		// driver.close();
+	}
 
 }
