@@ -26,7 +26,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.AfterTest;
 @Listeners({listener.class})
 public class TestNgSearchCourse  {
-	private static Logger logger = Logger.getLogger(TestNgLogin.class);
+	private static Logger logger = Logger.getLogger(TestNgSearchCourse.class);
 	WebDriver driver;
 	WebDriverWait wait;
 	HaveOrNo checkElement = new HaveOrNo();

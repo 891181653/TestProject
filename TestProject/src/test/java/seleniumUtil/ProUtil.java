@@ -1,6 +1,7 @@
 package seleniumUtil;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -10,9 +11,9 @@ public class ProUtil {
 	private  Properties prop = new Properties();
 	public ProUtil(String file) {
 		  try {
-	            InputStream in = Properties.class.getResourceAsStream(file);
-	            BufferedReader bf = new BufferedReader(new InputStreamReader(in));
-	            prop.load(bf);
+			  prop= new Properties();
+	          //  Properties.class.getClassLoader().getResourceAsStream("config/config.properties");
+			  prop.load(new FileInputStream("elements.properties")) ;
 	        }catch (IOException e){
 	            e.printStackTrace();
 	        }

@@ -1,6 +1,7 @@
 package seleniumPage;
 
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.By.ByPartialLinkText;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,8 +16,9 @@ public class BasePage {
 		this.driver = driver;
 	}
 
-	public void getElement(String key) {
+	public WebElement getElement(String key) {
 		WebElement element1 = driver.findElement(getByLocal(key));
+		return element1;
 	}
 
 	public By getByLocal(String key) {
@@ -38,7 +40,6 @@ public class BasePage {
 			return By.tagName(locatorValue);
 		} else if (locatorBy.equals("cssSelector")) {
 			return By.cssSelector(locatorValue);
-
 		} else if (locatorBy.equals("partialLinkText")) {
 			return By.partialLinkText(locatorValue);
 		} else {

@@ -68,7 +68,6 @@ public class TestNgLogin  {
 
 	@BeforeMethod
 	public void beforeMethod() {
-
 		System.out.println("this is beforeMethod");
 	}
 
@@ -86,7 +85,6 @@ public class TestNgLogin  {
 	@Test
 	public void loginAndEdiPosition() throws InterruptedException {
 		logger.debug("开始修改地址");
-		logger.error("-修改失败");
 		driver.findElement(By.linkText("登录")).click();
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("js-loginWrap")));
 		driver.findElement(By.name("email")).sendKeys("13437868119");

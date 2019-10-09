@@ -2,52 +2,120 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="33794" started-at="2019-10-07T00:57:06 CST" finished-at="2019-10-07T00:57:40 CST">
+  <suite name="Suite" duration-ms="74693" started-at="2019-10-09T14:54:37 CST" finished-at="2019-10-09T14:55:51 CST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="33794" started-at="2019-10-07T00:57:06 CST" finished-at="2019-10-07T00:57:40 CST">
-      <class name="seleniumTest.TestNgSearchCourse">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:seleniumTest.TestNgSearchCourse@221af3c0]" name="beforeTest" is-config="true" duration-ms="13" started-at="2019-10-07T00:57:06 CST" finished-at="2019-10-07T00:57:06 CST">
+    <test name="Test" duration-ms="31332" started-at="2019-10-09T14:54:37 CST" finished-at="2019-10-09T14:55:08 CST">
+      <class name="seleniumCase.LoginCase1">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="beforeTest" is-config="true" duration-ms="48" started-at="2019-10-09T14:54:37 CST" finished-at="2019-10-09T14:54:37 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:seleniumTest.TestNgSearchCourse@221af3c0]" name="beforeClass" is-config="true" duration-ms="8953" started-at="2019-10-07T00:57:06 CST" finished-at="2019-10-07T00:57:15 CST">
+        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="beforeClass" is-config="true" duration-ms="10735" started-at="2019-10-09T14:54:37 CST" finished-at="2019-10-09T14:54:48 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:seleniumTest.TestNgSearchCourse@221af3c0]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2019-10-07T00:57:15 CST" finished-at="2019-10-07T00:57:15 CST">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-10-09T14:54:48 CST" finished-at="2019-10-09T14:54:48 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="f()[pri:0, instance:seleniumTest.TestNgSearchCourse@221af3c0]" name="f" duration-ms="23995" started-at="2019-10-07T00:57:15 CST" finished-at="2019-10-07T00:57:39 CST">
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="login" duration-ms="18178" started-at="2019-10-09T14:54:48 CST" finished-at="2019-10-09T14:55:06 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[13437868119]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zxcfghuiop321]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://www.imooc.com]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:seleniumTest.TestNgSearchCourse@221af3c0]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-10-07T00:57:39 CST" finished-at="2019-10-07T00:57:39 CST">
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-10-09T14:55:06 CST" finished-at="2019-10-09T14:55:06 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:seleniumTest.TestNgSearchCourse@221af3c0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-10-07T00:57:39 CST" finished-at="2019-10-07T00:57:39 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="testFail()[pri:0, instance:seleniumTest.TestNgSearchCourse@221af3c0]" name="testFail" duration-ms="798" started-at="2019-10-07T00:57:39 CST" finished-at="2019-10-07T00:57:40 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testFail -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:seleniumTest.TestNgSearchCourse@221af3c0]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-10-07T00:57:40 CST" finished-at="2019-10-07T00:57:40 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:seleniumTest.TestNgSearchCourse@221af3c0]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-10-07T00:57:40 CST" finished-at="2019-10-07T00:57:40 CST">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="afterClass" is-config="true" duration-ms="2325" started-at="2019-10-09T14:55:06 CST" finished-at="2019-10-09T14:55:08 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:seleniumTest.TestNgSearchCourse@221af3c0]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-10-07T00:57:40 CST" finished-at="2019-10-07T00:57:40 CST">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-10-09T14:55:08 CST" finished-at="2019-10-09T14:55:08 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- seleniumTest.TestNgSearchCourse -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- seleniumCase.LoginCase1 -->
+    </test> <!-- Test -->
+    <test name="Test1" duration-ms="43317" started-at="2019-10-09T14:55:08 CST" finished-at="2019-10-09T14:55:51 CST">
+      <class name="seleniumCase.LoginCase1">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="beforeTest" is-config="true" duration-ms="1" started-at="2019-10-09T14:55:08 CST" finished-at="2019-10-09T14:55:08 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="beforeClass" is-config="true" duration-ms="11500" started-at="2019-10-09T14:55:08 CST" finished-at="2019-10-09T14:55:20 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="login" duration-ms="20210" started-at="2019-10-09T14:55:20 CST" finished-at="2019-10-09T14:55:40 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[13437868119]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zxcfghuiop321]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://www.imooc.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-10-09T14:55:20 CST" finished-at="2019-10-09T14:55:20 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="afterClass" is-config="true" duration-ms="11602" started-at="2019-10-09T14:55:40 CST" finished-at="2019-10-09T14:55:51 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-10-09T14:55:40 CST" finished-at="2019-10-09T14:55:40 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-10-09T14:55:51 CST" finished-at="2019-10-09T14:55:51 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- seleniumCase.LoginCase1 -->
+    </test> <!-- Test1 -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -3,17 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="seleniumTest.TestNgSearchCourse">
+      <class name="seleniumCase.LoginCase1">
         <methods>
-          <include name="f"/>
-          <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="afterTest"/>
-          <include name="afterClass"/>
+          <include name="beforeClass"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
+          <include name="afterClass"/>
+          <include name="login"/>
+          <include name="afterTest"/>
         </methods>
-      </class> <!-- seleniumTest.TestNgSearchCourse -->
+      </class> <!-- seleniumCase.LoginCase1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
