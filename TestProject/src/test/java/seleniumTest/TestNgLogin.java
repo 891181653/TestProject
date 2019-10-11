@@ -25,6 +25,7 @@ import org.testng.annotations.Test;
 import Help.HaveOrNo;
 import Help.yanzheng.Captcha;
 import Help.yanzheng.DamaUtil;
+import seleniumUtil.listener;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
@@ -224,7 +225,8 @@ public void sendEmail() {
 	@AfterClass
 	public void afterClass() {
 		System.out.println("this is afterClass");
-		sendEmail();
+	//	sendEmail();
+		driver.close();
 	}
 
 	@BeforeTest

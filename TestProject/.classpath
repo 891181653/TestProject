@@ -23,5 +23,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/ssh/TestProject/TestProject/test-output/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="D:/ssh/TestProject/TestProject/test-output/reportng-1.1.6.jar"/>
+	<classpathentry kind="lib" path="D:/ssh/TestProject/TestProject/test-output/velocity-dep-1.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

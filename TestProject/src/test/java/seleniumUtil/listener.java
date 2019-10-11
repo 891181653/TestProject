@@ -1,6 +1,7 @@
-package seleniumTest;
+package seleniumUtil;
 
 import java.io.File;
+
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,6 +13,8 @@ import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 
 import com.google.common.io.Files;
+
+import seleniumTest.WebDriverA;
 
 public class listener extends TestListenerAdapter {
 	WebDriver driver;

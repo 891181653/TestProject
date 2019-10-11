@@ -1,121 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="74693" started-at="2019-10-09T14:54:37 CST" finished-at="2019-10-09T14:55:51 CST">
+  <suite name="Default suite" duration-ms="1289" started-at="2019-10-11T07:53:05Z" finished-at="2019-10-11T07:53:07Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="31332" started-at="2019-10-09T14:54:37 CST" finished-at="2019-10-09T14:55:08 CST">
-      <class name="seleniumCase.LoginCase1">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="beforeTest" is-config="true" duration-ms="48" started-at="2019-10-09T14:54:37 CST" finished-at="2019-10-09T14:54:37 CST">
+    <test name="Default test" duration-ms="1289" started-at="2019-10-11T07:53:05Z" finished-at="2019-10-11T07:53:07Z">
+      <class name="seleniumCase.SendHtmlEmail">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:seleniumCase.SendHtmlEmail@4cf777e8]" name="beforeSuite" is-config="true" duration-ms="8" started-at="2019-10-11T15:53:05Z" finished-at="2019-10-11T15:53:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:seleniumCase.SendHtmlEmail@4cf777e8]" name="beforeTest" is-config="true" duration-ms="3" started-at="2019-10-11T15:53:05Z" finished-at="2019-10-11T15:53:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="beforeClass" is-config="true" duration-ms="10735" started-at="2019-10-09T14:54:37 CST" finished-at="2019-10-09T14:54:48 CST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:seleniumCase.SendHtmlEmail@4cf777e8]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-10-11T15:53:06Z" finished-at="2019-10-11T15:53:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-10-09T14:54:48 CST" finished-at="2019-10-09T14:54:48 CST">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:seleniumCase.SendHtmlEmail@4cf777e8]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2019-10-11T15:53:06Z" finished-at="2019-10-11T15:53:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="login" duration-ms="18178" started-at="2019-10-09T14:54:48 CST" finished-at="2019-10-09T14:55:06 CST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[13437868119]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[zxcfghuiop321]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[https://www.imooc.com]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="f()[pri:0, instance:seleniumCase.SendHtmlEmail@4cf777e8]" name="f" duration-ms="1272" started-at="2019-10-11T15:53:06Z" finished-at="2019-10-11T15:53:07Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-10-09T14:55:06 CST" finished-at="2019-10-09T14:55:06 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="afterClass" is-config="true" duration-ms="2325" started-at="2019-10-09T14:55:06 CST" finished-at="2019-10-09T14:55:08 CST">
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:seleniumCase.SendHtmlEmail@4cf777e8]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-10-11T15:53:07Z" finished-at="2019-10-11T15:53:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:seleniumCase.LoginCase1@7364985f]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-10-09T14:55:08 CST" finished-at="2019-10-09T14:55:08 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- seleniumCase.LoginCase1 -->
-    </test> <!-- Test -->
-    <test name="Test1" duration-ms="43317" started-at="2019-10-09T14:55:08 CST" finished-at="2019-10-09T14:55:51 CST">
-      <class name="seleniumCase.LoginCase1">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="beforeTest" is-config="true" duration-ms="1" started-at="2019-10-09T14:55:08 CST" finished-at="2019-10-09T14:55:08 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="beforeClass" is-config="true" duration-ms="11500" started-at="2019-10-09T14:55:08 CST" finished-at="2019-10-09T14:55:20 CST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="login" duration-ms="20210" started-at="2019-10-09T14:55:20 CST" finished-at="2019-10-09T14:55:40 CST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[13437868119]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[zxcfghuiop321]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[https://www.imooc.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-10-09T14:55:20 CST" finished-at="2019-10-09T14:55:20 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="afterClass" is-config="true" duration-ms="11602" started-at="2019-10-09T14:55:40 CST" finished-at="2019-10-09T14:55:51 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-10-09T14:55:40 CST" finished-at="2019-10-09T14:55:40 CST">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:seleniumCase.SendHtmlEmail@4cf777e8]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-10-11T15:53:07Z" finished-at="2019-10-11T15:53:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:seleniumCase.LoginCase1@51b7e5df]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-10-09T14:55:51 CST" finished-at="2019-10-09T14:55:51 CST">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:seleniumCase.SendHtmlEmail@4cf777e8]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-10-11T15:53:07Z" finished-at="2019-10-11T15:53:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- seleniumCase.LoginCase1 -->
-    </test> <!-- Test1 -->
-  </suite> <!-- Suite -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:seleniumCase.SendHtmlEmail@4cf777e8]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-10-11T15:53:07Z" finished-at="2019-10-11T15:53:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- seleniumCase.SendHtmlEmail -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

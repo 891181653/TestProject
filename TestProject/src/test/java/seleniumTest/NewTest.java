@@ -1,7 +1,6 @@
 package seleniumTest;
 import org.testng.annotations.Test;
 
-import seleniumCase.LoginCase;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;

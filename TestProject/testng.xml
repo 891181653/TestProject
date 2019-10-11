@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" Thread-count="2">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+		<listener
+			class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
+		<listener class-name="seleniumUtil.TestCaseReport"></listener>
+	</listeners>
 	<test thread-count="5" name="Test">
+		<!-- <groups> <run> <include name="group1"></include> </run> </groups> -->
 		<parameter name="passWord" value="zxcfghuiop321" />
 		<parameter name="userName" value="13437868119" />
 		<parameter name="url" value="https://www.imooc.com" />
-		<parameter name="browser" value="chrome"/>
+		<parameter name="browser" value="chrome" />
 		<classes>
-		
+
 			<class name="seleniumCase.LoginCase1">
 				<methods>
 					<include name="login"></include>
+				</methods>
+			</class>
+			<class name="seleniumTest.TestNgLogin">
+				<methods>
+					<include name="loginAndEdiPosition"></include>
 				</methods>
 			</class>
 		</classes>
@@ -19,12 +31,13 @@
 		<parameter name="passWord" value="zxcfghuiop321" />
 		<parameter name="userName" value="13437868119" />
 		<parameter name="url" value="https://www.imooc.com" />
-		<parameter name="browser" value="firefox"/>
+		<parameter name="browser" value="firefox" />
 		<classes>
-		
 			<class name="seleniumCase.LoginCase1">
 				<methods>
 					<include name="login"></include>
+					<include name="firstCase"></include>
+					<include name="secondCase"></include>
 				</methods>
 			</class>
 		</classes>
